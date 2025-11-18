@@ -1,0 +1,11 @@
+.ticket-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}

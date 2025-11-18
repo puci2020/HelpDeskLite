@@ -1,0 +1,20 @@
+<div class="user-profile" *ngIf="!loading && user; else loadingTpl">
+  <mat-card>
+    <mat-card-title>{{ user.name }}</mat-card-title>
+    <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+
+    <mat-card-content>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+      <p><strong>Website:</strong> {{ user.website }}</p>
+      <p><strong>Company:</strong> {{ user.company?.name }}</p>
+      <p><strong>Address:</strong> {{ user.address?.street }}, {{ user.address?.city }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #loadingTpl>
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</ng-template>
+
+<div *ngIf="error" class="error">{{ error }}</div>

@@ -1,0 +1,21 @@
+<mat-card class="ticket-card" (click)="viewTicket()">
+  <mat-card-header>
+    <mat-card-title>{{ ticket.title }}</mat-card-title>
+    <mat-card-subtitle>{{ ticket.status | titlecase }}</mat-card-subtitle>
+    <app-priority-badge [priority]="ticket.priority"></app-priority-badge>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ ticket.description }}</p>
+    <div class="tags">
+      <mat-chip-list *ngIf="ticket.tags?.length">
+        <mat-chip *ngFor="let tag of ticket.tags">{{ tag.name }}</mat-chip>
+      </mat-chip-list>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="warn" (click)="deleteTicket($event)">Delete</button>
+    <button mat-button color="primary" [routerLink]="['/tickets', ticket.id, 'edit']">
+      Edit
+    </button>
+  </mat-card-actions>
+</mat-card>

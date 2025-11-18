@@ -1,0 +1,50 @@
+<mat-card>
+  <h2>{{ ticketId ? 'Edit Ticket' : 'Create Ticket' }}</h2>
+
+  <form [formGroup]="form">
+
+    <mat-form-field appearance="outline" class="wide">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="wide">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="wide">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option value="low">Low</mat-option>
+        <mat-option value="medium">Medium</mat-option>
+        <mat-option value="high">High</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="wide">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="open">Open</mat-option>
+        <mat-option value="in_progress">In Progress</mat-option>
+        <mat-option value="closed">Closed</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+<!--      <app-tag-selector-->
+<!--        [selected]="form.value.tags"-->
+<!--        (selectedChange)="form.controls['tags'].setValue($event)">-->
+<!--      </app-tag-selector>-->
+
+
+    <div class="form-buttons-container">
+      <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid || loading">
+        Save
+      </button>
+
+      <button mat-raised-button color="accent" *ngIf="ticketId" (click)="suggestTriage()">
+        Suggest Triage
+      </button>
+    </div>
+  </form>
+</mat-card>

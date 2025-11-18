@@ -1,0 +1,12 @@
+.ticket-card {
+  width: 300px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.tags {
+  margin-top: 8px;
+}
+app-priority-badge {
+  float: right;
+}

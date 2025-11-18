@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSidenav()" *ngIf="(isHandset$ | async)">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>HelpDesk Lite</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="toggleTheme()">Dark/Light</button>
+  <button mat-button (click)="logout()">Logout</button>
+</mat-toolbar>

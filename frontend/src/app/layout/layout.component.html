@@ -1,0 +1,22 @@
+<app-header [drawer]="drawer"></app-header>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer
+               [mode]="(isHandset$ | async) ? 'over' : 'side'"
+               [opened]="!(isHandset$ | async)">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <button mat-fab color="primary" class="user-dialog-btn" (click)="openUserDialog()">
+      <mat-icon>person</mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<app-footer></app-footer>
+

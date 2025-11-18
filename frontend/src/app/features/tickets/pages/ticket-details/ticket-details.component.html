@@ -1,0 +1,13 @@
+<div *ngIf="ticket">
+  <h2>{{ticket.title}}</h2>
+  <p>Status: {{ticket.status}}</p>
+  <p>Priority: {{ticket.priority}}</p>
+  <p>Reporter: {{ticket.reporter?.name}}</p>
+  <p>Assignee: {{ticket.assignee?.name}}</p>
+
+  <div>
+    <p>Tags:</p>
+    <span *ngFor="let tag of ticket.tags">{{tag.name}}</span>
+  </div>
+
+</div>

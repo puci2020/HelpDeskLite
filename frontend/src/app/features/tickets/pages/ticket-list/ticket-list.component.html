@@ -1,0 +1,12 @@
+<div *ngIf="loading" class="loading-container">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+
+<div *ngIf="!loading" class="ticket-grid">
+  <app-ticket-card
+    *ngFor="let ticket of tickets"
+    [ticket]="ticket"
+    (deleted)="deleteTicket($event)"
+    (clicked)="goToDetails($event)">
+  </app-ticket-card>
+</div>

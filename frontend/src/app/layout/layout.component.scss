@@ -1,0 +1,22 @@
+.sidenav-container {
+  height: calc(100vh - 64px - 64px); // minus toolbar i footer, dopasuj jeśli trzeba
+}
+
+.main-content {
+  padding: 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.user-dialog-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 16px;
+  z-index: 1000;
+}
+
+.menu-button {
+  margin-right: 8px;
+}
