@@ -50,6 +50,12 @@ Frontend: `http://localhost:4200`
 
 Backend: `http://localhost:8000`
 
+Dane użytkownik do testów:
+Admin: L: admin@example.com P: password
+Agent: L: agent@example.com P: password
+Reporter: L: reporter@example.com P: password
+
+
 ## Jak korzystałem z LLM
 ### 1. Strategia i promptowanie
 * Traktowałem LLM jako asystenta
