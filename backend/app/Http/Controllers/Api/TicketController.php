@@ -26,10 +26,6 @@ class TicketController extends Controller
         $tickets = $this->service->filter($filters);
 
         return response()->json($tickets);
-//        return response()->json([
-//            'data' => $tickets,
-//            'message' => null
-//        ]);
     }
 
     public function store(TicketStoreRequest $request): JsonResponse
@@ -52,11 +48,6 @@ class TicketController extends Controller
         $this->authorize('view', $ticket);
 
         return response()->json($ticket);
-
-//        return response()->json([
-//            'data' => $ticket,
-//            'message' => null
-//        ]);
     }
 
     public function update(TicketUpdateRequest $request, int $id): JsonResponse
@@ -101,10 +92,5 @@ class TicketController extends Controller
         $suggestion = $this->triageService->suggest($ticket);
 
         return response()->json($suggestion);
-
-        return response()->json([
-            'data' => $suggestion,
-            'message' => null
-        ]);
     }
 }
