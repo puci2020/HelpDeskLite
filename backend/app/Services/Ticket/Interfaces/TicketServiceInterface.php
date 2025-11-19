@@ -15,5 +15,5 @@ interface TicketServiceInterface
 
     public function find(int $id): ?Ticket;
 
-    public function delete(int $id): void;
+    public function delete(Ticket $ticket): void;
 }

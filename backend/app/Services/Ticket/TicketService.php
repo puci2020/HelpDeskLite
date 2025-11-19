@@ -45,10 +45,8 @@ class TicketService implements TicketServiceInterface
         return $this->repository->findById($id);
     }
 
-    public function delete(int $id): void
+    public function delete(Ticket $ticket): void
     {
-        $ticket = $this->repository->findById($id);
-
         $ticket->tags()->forceDelete();
         $ticket->statusChanges()->forceDelete();
 
